@@ -1,19 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Enemy : MonoBehaviour
+public class EnemyKillZone : MonoBehaviour
 {
-    
+
     // Use this for initialization
     void Start()
     {
 
     }
 
-    
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
 
     }
 
@@ -22,7 +20,7 @@ public class Enemy : MonoBehaviour
         var player = collision.gameObject.GetComponent<Player>();
         if (player != null)
         {
-            player.Die(); 
+            transform.parent.gameObject.SetActive(false);
         }
     }
 }
